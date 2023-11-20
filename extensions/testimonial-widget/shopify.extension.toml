@@ -1,0 +1,116 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/api/checkout-extensions/checkout/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2023-10"
+
+[[extensions]]
+type = "ui_extension"
+name = "testimonial-widget"
+handle = "testimonial-widget"
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
+
+[[extensions.targeting]]
+module = "./src/Checkout.jsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify’s storefront API.
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
+# network_access = true
+
+# Loads metafields on checkout resources, including the cart,
+# products, customers, and more. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
+
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_key"
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_other_key"
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "ratings_count"
+type = "single_line_text_field"
+name = "Rating Count Image"
+description = "Enter Rating Count Image URL"
+[[extensions.settings.fields]]
+key = "product_image_1"
+type = "single_line_text_field"
+name = "Product Image"
+description = "Enter Product Image Url"
+[[extensions.settings.fields]]
+key = "author_1"
+type = "single_line_text_field"
+name = "Author"
+description = "Enter Author Name"
+[[extensions.settings.fields]]
+key = "content_1"
+type = "multi_line_text_field"
+name = "Review"
+description = "Enter Review"
+[[extensions.settings.fields]]
+key = "product_image_2"
+type = "single_line_text_field"
+name = "Product Image"
+description = "Enter Product Image Url"
+[[extensions.settings.fields]]
+key = "author_2"
+type = "single_line_text_field"
+name = "Author"
+description = "Enter Author Name"
+[[extensions.settings.fields]]
+key = "content_2"
+type = "multi_line_text_field"
+name = "Review"
+description = "Enter Review"
+[[extensions.settings.fields]]
+key = "why_choose"
+type = "single_line_text_field"
+name = "Why Choose Heading Image"
+description = "Enter Why Choose Headeing Image URL"
+[[extensions.settings.fields]]
+key = "shipping_icon"
+type = "single_line_text_field"
+name = "Shipping Icon Image"
+description = "Enter Shipping icon Image URL"
+[[extensions.settings.fields]]
+key = "shipping_heading"
+type = "single_line_text_field"
+name = "Shipping Heading"
+description = "Enter Shipping Heading"
+[[extensions.settings.fields]]
+key = "shipping_description"
+type = "single_line_text_field"
+name = "Shipping Description"
+description = "Enter Shipping Description"
+[[extensions.settings.fields]]
+key = "truck_icon"
+type = "single_line_text_field"
+name = "Delivery Icon Image"
+description = "Enter Delivery icon Image URL"
+[[extensions.settings.fields]]
+key = "delivery_heading"
+type = "single_line_text_field"
+name = "Delivery Heading"
+description = "Enter Delivery Heading"
+[[extensions.settings.fields]]
+key = "delivery_description"
+type = "single_line_text_field"
+name = " Delivery Description"
+description = "Enter Delivery Description"
